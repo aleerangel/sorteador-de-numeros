@@ -38,9 +38,11 @@ function alterarStatusBotaoReiniciar() {
     if (botaoReiniciar.classList.contains('container__botao-desabilitado')) {
         botaoReiniciar.classList.remove('container__botao-desabilitado');
         botaoReiniciar.classList.add('container__botao');
+        document.getElementById('btn-reiniciar').disabled = false;
     } else {
         botaoReiniciar.classList.remove('container__botao');
         botaoReiniciar.classList.add('container__botao-desabilitado');
+        document.getElementById('btn-reiniciar').disabled = true;
     }  
 }
 function alterarStatusBotaoSortear() {
@@ -48,9 +50,11 @@ function alterarStatusBotaoSortear() {
     if (botaoSortear.classList.contains('container__botao')) {
         botaoSortear.classList.remove('container__botao');
         botaoSortear.classList.add('container__botao-desabilitado');
+        document.getElementById('btn-sortear').disabled = true;
     } else {
         botaoSortear.classList.remove('container__botao-desabilitado');
         botaoSortear.classList.add('container__botao');
+        document.getElementById('btn-sortear').disabled = false;
     }
 }
 
