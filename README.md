@@ -4,7 +4,7 @@
 <p>Projeto utilizado nos curos de lógica de programação da Alura.</p>
 
 <h2> :video_game: Link para utilização</h2>
-<p>[https://jogo-eight-phi-50.vercel.app/](https://sorteador-de-numeros-c82l9wfqd-aleerangels-projects.vercel.app/)</p>
+<p>https://sorteador-de-numeros-c82l9wfqd-aleerangels-projects.vercel.app/</p>
 
 ## :rocket: Tecnologias
 <div>
