@@ -1,10 +1,11 @@
+document.getElementById('btn-reiniciar').disabled = true;
 function sortear() {
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
     let sorteados = [];
     let numero;
-    if (quantidade > 0) {
+    if (quantidade > 0 && de > 0 && ate > 0) {
         if (quantidade > ate) {
             alert ('Atenção! A quantidade é maior que o número limite. Por favor, revise os dados e os insira novamente!');
             return;
@@ -29,7 +30,7 @@ function sortear() {
         alterarStatusBotaoReiniciar();
         alterarStatusBotaoSortear();
     } else {
-        alert ('Preencha o campo quantidade!')
+        alert ('Preencha todos os campos!')
     }
     
 }
