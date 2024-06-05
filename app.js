@@ -4,29 +4,34 @@ function sortear() {
     let ate = parseInt(document.getElementById('ate').value);
     let sorteados = [];
     let numero;
-    if (quantidade > ate) {
-        alert ('Atenção! A quantidade é maior que o número limite. Por favor, revise os dados e os insira novamente!');
-        return;
-    }
-    if (quantidade > (ate - de)) {
-        alert ('Atenção! A quantidade é maior que o intervalo dos números. Por favor, revise os dados e os insira novamente');
-        return;
-    }
-    for (let i = 0; i < quantidade; i++) {
-        numero = obterNumeroAleatorio(de, ate);
-        while (sorteados.includes(numero)) {
-            numero = obterNumeroAleatorio(de, ate);
+    if (quantidade > 0) {
+        if (quantidade > ate) {
+            alert ('Atenção! A quantidade é maior que o número limite. Por favor, revise os dados e os insira novamente!');
+            return;
         }
-        sorteados.push(numero);
-    }
-    let resultado = document.getElementById('resultado');
-    if (quantidade == 1) { 
-        resultado.innerHTML = `<label class="texto__paragrafo">Número sorteado:  ${sorteados}</label>`;
+        if (quantidade > (ate - de)) {
+            alert ('Atenção! A quantidade é maior que o intervalo dos números. Por favor, revise os dados e os insira novamente');
+            return;
+        }
+        for (let i = 0; i < quantidade; i++) {
+            numero = obterNumeroAleatorio(de, ate);
+            while (sorteados.includes(numero)) {
+                numero = obterNumeroAleatorio(de, ate);
+            }
+            sorteados.push(numero);
+        }
+        let resultado = document.getElementById('resultado');
+        if (quantidade == 1) { 
+            resultado.innerHTML = `<label class="texto__paragrafo">Número sorteado:  ${sorteados}</label>`;
+        } else {
+            resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+        }
+        alterarStatusBotaoReiniciar();
+        alterarStatusBotaoSortear();
     } else {
-        resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`;
+        alert ('Preencha o campo quantidade!')
     }
-    alterarStatusBotaoReiniciar();
-    alterarStatusBotaoSortear();
+    
 }
 
 function obterNumeroAleatorio(min, max) {
